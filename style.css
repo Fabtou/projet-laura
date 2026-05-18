@@ -1,0 +1,292 @@
+/* ===========================================================
+   Cabinet Maître Laura Cabrera — feuille de style partagée
+   Reprise de la charte du site existant : fond sable, texte
+   anthracite, boutons "pilule" à contour fin.
+   =========================================================== */
+
+:root {
+  --sand:        #e6cba9;   /* fond principal */
+  --sand-dark:   #dcbf99;   /* bandeau / cartes */
+  --sand-soft:   #ecdcc4;   /* cartes claires */
+  --ink:         #1c1c1c;   /* texte principal */
+  --ink-soft:    #4a4a44;   /* texte secondaire */
+  --line:        #b8997099; /* filets */
+  --accent:      #2b3a52;   /* bleu nuit, rappel "barreau" */
+  --white:       #faf6ef;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  background: var(--sand);
+  color: var(--ink);
+  line-height: 1.75;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+/* ---------- En-tête / navigation ---------- */
+header {
+  background: var(--sand-dark);
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 28px; max-width: 1280px; margin: 0 auto;
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 1.15rem;
+  text-decoration: none; color: var(--ink);
+  line-height: 1.2; max-width: 240px;
+}
+.logo small {
+  display: block; font-family: 'Spectral', serif;
+  font-size: .68rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--ink-soft);
+  font-weight: 400; margin-top: 2px;
+}
+nav ul { list-style: none; display: flex; gap: 26px; align-items: center; }
+nav a {
+  text-decoration: none; color: var(--ink-soft);
+  font-size: .9rem; letter-spacing: .02em;
+  padding-bottom: 3px; border-bottom: 1.5px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+nav a:hover { color: var(--ink); }
+nav a.active { color: var(--ink); font-weight: 400; border-color: var(--accent); }
+
+.burger {
+  display: none; background: none; border: 0;
+  font-size: 1.6rem; cursor: pointer; color: var(--ink);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-block; text-decoration: none;
+  font-family: 'Spectral', serif; font-size: .95rem;
+  padding: 14px 38px; border-radius: 999px;
+  border: 1.5px solid var(--ink); color: var(--ink);
+  background: transparent; cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--ink); color: var(--sand); }
+.btn-filled { background: var(--accent); border-color: var(--accent); color: var(--white); }
+.btn-filled:hover { background: var(--ink); border-color: var(--ink); }
+
+/* ---------- Hero d'accueil ---------- */
+.hero {
+  position: relative; min-height: 78vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; color: var(--white);
+  padding: 80px 20px;
+  background: linear-gradient(180deg, rgba(20,30,48,.28), rgba(20,30,48,.55)),
+              radial-gradient(ellipse at top, #6f93b8, #2b3a52);
+}
+.hero h1 {
+  color: var(--white); font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 500; letter-spacing: .01em;
+}
+.hero .sub {
+  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+  font-weight: 300; margin: 4px 0 40px; color: #f3ede2;
+}
+
+/* ---------- Sections de page intérieure ---------- */
+.page { padding: 70px 0 90px; }
+.page-title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  margin-bottom: 36px;
+}
+.page-title.center { text-align: center; }
+
+.lead { font-size: 1.12rem; color: var(--ink-soft); }
+.lead p + p { margin-top: 18px; }
+
+.split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 56px; align-items: center;
+}
+.split.text-first { grid-template-columns: 1.05fr .95fr; }
+
+.media {
+  border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--sand-soft);
+  aspect-ratio: 4 / 3;
+  display: flex; align-items: center; justify-content: center;
+}
+.media span {
+  font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-soft); text-align: center; padding: 20px;
+}
+
+/* listes de prestations */
+.checklist { list-style: none; margin: 22px 0; }
+.checklist li {
+  position: relative; padding-left: 26px; margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+.checklist li::before {
+  content: "•"; position: absolute; left: 4px;
+  color: var(--accent); font-size: 1.3rem; line-height: 1.4;
+}
+.intro-list { font-weight: 400; margin-bottom: 6px; }
+
+/* ---------- Cartes (honoraires, articles) ---------- */
+.cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 26px; margin: 44px 0;
+}
+.card {
+  background: var(--sand-soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 38px 28px; text-align: center;
+  box-shadow: 0 10px 24px rgba(90,60,30,.10);
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(90,60,30,.16); }
+.card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.card em { color: var(--ink-soft); font-size: 1rem; }
+
+/* ---------- Articles ---------- */
+.articles-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 32px; margin-top: 40px;
+}
+.article-card {
+  background: var(--sand-soft); border: 1px solid var(--line);
+  border-radius: 4px; overflow: hidden; text-decoration: none;
+  color: var(--ink); display: flex; flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+.article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(90,60,30,.16); }
+.article-thumb {
+  background: var(--sand-dark); aspect-ratio: 16 / 9;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem;
+}
+.article-card .body { padding: 26px 28px; }
+.article-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.article-card p { color: var(--ink-soft); font-size: .98rem; }
+.article-card .more {
+  margin-top: 14px; font-size: .85rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent);
+}
+
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 50px; margin-top: 30px;
+}
+.contact-block { margin-bottom: 26px; }
+.contact-block .label {
+  font-size: .74rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 4px;
+}
+.contact-block .value { font-size: 1.25rem; }
+.contact-block .value a { text-decoration: none; }
+.contact-block .value a:hover { color: var(--accent); }
+.socials { display: flex; gap: 16px; margin-top: 8px; }
+.socials a {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--ink); display: flex;
+  align-items: center; justify-content: center;
+  text-decoration: none; font-size: .8rem; font-weight: 600;
+  transition: background .2s, color .2s;
+}
+.socials a:hover { background: var(--ink); color: var(--sand); }
+
+.placeholder-note {
+  background: #fff4d6; border: 1px dashed #c9a24a;
+  color: #6b5414; font-size: .82rem;
+  padding: 4px 10px; border-radius: 4px;
+  display: inline-block; margin-top: 6px;
+}
+
+/* formulaire */
+.form { background: var(--sand-soft); border: 1px solid var(--line);
+  border-radius: 4px; padding: 34px; }
+.form label {
+  display: block; font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 5px;
+}
+.form input, .form textarea {
+  width: 100%; padding: 11px 13px; margin-bottom: 18px;
+  border: 1px solid var(--line); border-radius: 3px;
+  background: var(--white); font-family: inherit; font-size: 1rem;
+  color: var(--ink);
+}
+.form input:focus, .form textarea:focus { outline: 2px solid var(--accent); }
+
+/* ---------- Mentions légales ---------- */
+.legal-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 50px; margin-top: 40px; text-align: center;
+}
+.legal-col .crest { font-size: 3.4rem; margin-bottom: 14px; }
+.legal-col h3 { font-size: 1.5rem; margin-bottom: 14px; }
+.legal-col p { font-size: 1.08rem; line-height: 2; }
+
+/* ---------- Bandeau d'appel ---------- */
+.cta-band {
+  background: var(--accent); color: var(--white);
+  text-align: center; padding: 60px 20px;
+}
+.cta-band h2 { color: var(--white); font-size: 2.2rem; margin-bottom: 8px; }
+.cta-band p { color: #d7dee9; margin-bottom: 26px; }
+
+/* ---------- Pied de page ---------- */
+footer {
+  background: var(--sand-dark);
+  border-top: 1px solid var(--line);
+  padding: 40px 0 26px; font-size: .9rem; color: var(--ink-soft);
+}
+.footer-top {
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px; padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.footer-top .fname {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; color: var(--ink);
+}
+.footer-links a { color: var(--ink-soft); text-decoration: none; margin-left: 16px; }
+.footer-links a:hover { color: var(--ink); }
+.footer-bottom { padding-top: 18px; font-size: .8rem; text-align: center; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 880px) {
+  nav ul {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--sand-dark);
+    border-bottom: 1px solid var(--line); padding: 8px 0;
+  }
+  nav ul.open { display: flex; }
+  nav li { width: 100%; text-align: center; }
+  nav a { display: block; padding: 12px 0; border-bottom: none; }
+  .burger { display: block; }
+  .split, .split.text-first,
+  .contact-grid, .legal-grid { grid-template-columns: 1fr; gap: 34px; }
+  .cards, .articles-grid { grid-template-columns: 1fr; }
+  .order-media-first .media { order: -1; }
+  .footer-top { flex-direction: column; }
+  .footer-links a { margin: 0 8px 0 0; }
+}

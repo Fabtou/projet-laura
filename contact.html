@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Maître Laura Cabrera, avocate à Versailles</title>
+<meta name="description" content="Contactez le cabinet de Maître Laura Cabrera : 21 boulevard de la Reine, 78000 Versailles. Prise de rendez-vous par téléphone ou courriel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Spectral:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      Maître Laura Cabrera
+      <small>Avocate au Barreau de Versailles</small>
+    </a>
+    <nav>
+      <button class="burger" aria-label="Ouvrir le menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+      <ul id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="presentation.html">Présentation</a></li>
+        <li><a href="droit-penal.html">Droit pénal</a></li>
+        <li><a href="droit-immobilier.html">Droit immobilier</a></li>
+        <li><a href="honoraires.html">Honoraires</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section class="page">
+  <div class="wrap">
+    <h1 class="page-title">Contact</h1>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-block">
+          <div class="label">Adresse du cabinet</div>
+          <div class="value">21 boulevard de la Reine — 78000 Versailles</div>
+        </div>
+        <div class="contact-block">
+          <div class="label">Téléphone</div>
+          <div class="value"><a href="tel:+33000000000">À compléter</a></div>
+          <span class="placeholder-note">À remplacer par le bon numéro</span>
+        </div>
+        <div class="contact-block">
+          <div class="label">Courriel</div>
+          <div class="value"><a href="mailto:laura.cabrera@avocat.fr">laura.cabrera@avocat.fr</a></div>
+        </div>
+        <div class="contact-block">
+          <div class="label">Réseaux</div>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <p style="margin-top:24px">
+          <a class="btn" href="https://maps.google.com/?q=21+boulevard+de+la+Reine+78000+Versailles" target="_blank" rel="noopener">Nous trouver</a>
+        </p>
+      </div>
+      <div class="form">
+        <p style="margin-bottom:20px;color:var(--ink-soft);font-size:.95rem">
+          Décrivez votre demande : le cabinet vous répond dans les meilleurs délais.
+        </p>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom">
+        <label for="email">Courriel</label>
+        <input type="email" id="email" name="email">
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="tel">
+        <label for="msg">Votre demande</label>
+        <textarea id="msg" name="msg" rows="5"></textarea>
+        <button type="button" class="btn btn-filled" style="width:100%">Envoyer ma demande</button>
+        <p style="margin-top:14px;font-size:.8rem;color:var(--ink-soft)">
+          Ce formulaire ne crée pas de relation client et ne remplace pas une consultation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="fname">Maître Laura Cabrera</div>
+        <div>Avocate au Barreau de Versailles</div>
+        <div>21 boulevard de la Reine — 78000 Versailles</div>
+      </div>
+      <div class="footer-links">
+        <a href="presentation.html">Présentation</a>
+        <a href="droit-penal.html">Droit pénal</a>
+        <a href="droit-immobilier.html">Droit immobilier</a>
+        <a href="honoraires.html">Honoraires</a>
+        <a href="contact.html">Contact</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Cabinet Laura Cabrera — Tous droits réservés</div>
+  </div>
+</footer>
+
+</body>
+</html>
